@@ -292,6 +292,7 @@ def test_14():
     conn, _ = load_data()
     with open("pregunta_14.sql", encoding="utf-8") as file:
         query = file.read()
+    
     assert pd.read_sql_query(query, conn).to_dict() == {
         "K0": {0: "A", 1: "B", 2: "C", 3: "D", 4: "E"},
         "avg(c21)": {
